@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Pedido</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Data</th>
+            <th scope="col">status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pedido of pedidos let i=index" >
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ pedido.item }}</td>
+            <td>{{ pedido.clienteId }}</td>
+            <td>{{ pedido.data }}</td>
+            <td>{{ pedido.finalizado }}</td>
+        </tr>
+    </tbody>
+</table>
