@@ -7,15 +7,18 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class StoreService {
 
-  pedidosRef = this.store.collection('pedido');
+  requestsRef = this.store.collection('pedido');
   requestList: Array<any> = [];
 
   constructor(private store: AngularFirestore) {
-    this.pedidosRef.get().toPromise().then((querySnapshot) => { querySnapshot.forEach((doc) => {this.requestList.push(doc.data());});});
+    
   }
 
-  addPedido(){
+  addRequest(){
     //this.store.collection('pedido').add({obj});
+  }
+  getAllRequests(){
+    this.requestsRef.get().toPromise().then((querySnapshot) => { querySnapshot.forEach((doc) => {this.requestList.push(doc.data());});});
   }
 }
 

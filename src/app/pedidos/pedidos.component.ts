@@ -12,11 +12,16 @@ export class PedidosComponent implements OnInit {
   pedidos: Array<any>;
 
 
-  constructor(private store: StoreService) { 
-    this.pedidos = this.store.requestList;
+  constructor(private store: StoreService) {     
   }
 
   ngOnInit(): void {
+    this.loadRequests();
+  }
+
+  loadRequests(){
+    this.store.getAllRequests();
+    this.pedidos = this.store.requestList;
   }
 
 
