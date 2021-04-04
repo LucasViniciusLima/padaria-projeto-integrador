@@ -17,6 +17,9 @@ export class StoreService {
   addRequest(){
     //this.store.collection('pedido').add({obj});
   }
+  completeRequestById(id: string){
+    this.requestsRef.doc(id).update({"finalizado": true});
+  }
   getAllRequests(){
     this.requestsRef.get().toPromise().then((querySnapshot) => { querySnapshot.forEach((doc) => {this.requestList.push(doc.data());});});
   }

@@ -12,7 +12,8 @@ export class PedidosComponent implements OnInit {
   pedidos: Array<any>;
 
 
-  constructor(private store: StoreService) {     
+  constructor(private store: StoreService) { 
+    
   }
 
   ngOnInit(): void {
