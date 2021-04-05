@@ -4,6 +4,7 @@
             <th scope="col">N°</th>
             <th scope="col">Pedido</th>
             <th scope="col">Cliente</th>
+            <th scope="col">Hora</th>
             <th scope="col">Data</th>
             <th scope="col">status</th>
         </tr>
@@ -13,7 +14,8 @@
             <th scope="row">{{ i+1 }}</th>
             <td>{{ pedido.item }}</td>
             <td>{{ pedido.clienteId }}</td>
-            <td>{{ pedido.data | date: 'dd/MM/yyyy' }}</td>            
+            <td>{{ pedido.data | date: 'HH:mm' }}</td>
+            <td>{{ pedido.data | date: 'dd-MM-yyyy' }}</td>                        
             <td (click)="changeStatus(pedido.id, !pedido.finalizado)" [style.color]="pedido.finalizado? 'green': 'red'">{{ pedido.finalizado ? '✓' : '✗' }}</td>
         </tr>
     </tbody>
