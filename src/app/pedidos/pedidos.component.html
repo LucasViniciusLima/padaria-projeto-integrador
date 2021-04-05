@@ -13,8 +13,8 @@
             <th scope="row">{{ i+1 }}</th>
             <td>{{ pedido.item }}</td>
             <td>{{ pedido.clienteId }}</td>
-            <td>{{ pedido.data | date: 'dd/MM/yyyy' }}</td>
-            <td>{{ pedido.finalizado }}</td>
+            <td>{{ pedido.data | date: 'dd/MM/yyyy' }}</td>            
+            <td (click)="changeStatus(pedido.id, !pedido.finalizado)" [style.color]="pedido.finalizado? 'green': 'red'">{{ pedido.finalizado ? '✓' : '✗' }}</td>
         </tr>
     </tbody>
 </table>

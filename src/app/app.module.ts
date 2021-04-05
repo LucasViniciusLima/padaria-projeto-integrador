@@ -8,7 +8,6 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 
-
 import { routing } from './app.routing';
 import { environment } from 'src/environments/environment';
 import { PedidosComponent } from './pedidos/pedidos.component';
@@ -24,7 +23,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     CadastroComponent,
     PedidosComponent,
     NavbarComponent,
-    TopbarComponent
+    TopbarComponent,
   ],
   imports: [
     BrowserModule,
