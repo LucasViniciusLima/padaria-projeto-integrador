@@ -17,10 +17,17 @@ export class PedidosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.getItems().subscribe(items => { console.log(items); this.pedidos = items; });
+    this.store.getItems().subscribe(items => { this.pedidos = items; }); 
+    console.log(this.getUserName("7FZpWJ14DAhVyq2CI33jCxWuhty1"));   
   }
 
   changeStatus(id: string, newStatus: boolean){
     this.store.completeRequest(id,newStatus);
+  }
+
+  getUserName(id:string){
+    this.store.getUser(id).subscribe(item=>{
+      return item;
+    });
   }
 }
