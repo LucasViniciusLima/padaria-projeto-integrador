@@ -27,7 +27,7 @@ export class PedidosComponent implements OnInit {
 
   getUserName(id:string){
     this.store.getUser(id).subscribe(item=>{
-      return item;
+      return item.nome;
     });
   }
 }
