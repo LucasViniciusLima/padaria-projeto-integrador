@@ -13,7 +13,7 @@
         <tr *ngFor="let pedido of pedidos let i=index" >
             <th scope="row">{{ i+1 }}</th>
             <td>{{ pedido?.itens?.length }}</td>
-            <td>{{ pedido.idCliente }}</td>
+            <td>{{ pedido.nomeCliente }}</td>
             <td>{{ pedido.data | date: 'HH:mm' }}</td>
             <td>{{ pedido.data | date: 'dd-MM-yyyy' }}</td>                        
             <td class="action" (click)="changeStatus(pedido.id, !pedido.finalizado)" [style.color]="pedido.finalizado? 'green': 'red'">{{ pedido.finalizado ? '✓' : '✗' }}</td>
