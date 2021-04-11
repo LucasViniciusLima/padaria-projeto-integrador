@@ -12,31 +12,30 @@ export class StoreService {
   tasksCollection: AngularFirestoreCollection<any>;
   userDoc: AngularFirestoreDocument<any>;
   tasks: Observable<any[]>;
-
+  
 
   constructor(private store: AngularFirestore) {
-    this.tasksCollection = this.store.collection('pedido', ref => ref.orderBy('data').limit(30));
-    //tente ao maximo nomear isso certo
+    this.tasksCollection = this.store.collection('pedido', ref => ref.orderBy('data',"desc").limit(30));
+    
     this.tasks = this.tasksCollection.snapshotChanges().pipe(
       map(tarefasCollection => {
-        return tarefasCollection.map(a => {
-          const data = a.payload.doc.data() as any;
-          data.id = a.payload.doc.id;
-          return data;
+        return tarefasCollection.map(tarefa => {
+          const tarefaData = tarefa.payload.doc.data() as any;
+          tarefaData.id = tarefa.payload.doc.id;
+          tarefaData.data = new Date(tarefaData.data*1000);
+          return tarefaData;
         });
       }),
       map(tarefas => {
         tarefas.map(item => {
-          this.getSchedule(item.idCliente).then(data => {
-            var cliente = data as any;
+          this.getSchedule(item.idCliente).then(clienteDoc => {
+            var cliente = clienteDoc as any;
             item.nomeCliente = cliente.nome;
           });
         })
-        console.table(tarefas);
         return tarefas;
       })
     );
-    console.table(this.tasks);
   }
 
   getItems() {
