@@ -12,9 +12,10 @@ import { StoreService } from '../store.service';
 export class PedidosComponent implements OnInit {
 
   pedidos: Array<any>;
+  hiddenCompleteRequests: boolean;
 
   constructor(private store: StoreService) {    
-    
+    this.hiddenCompleteRequests = false;
   }
 
   ngOnInit(): void {
@@ -24,5 +25,12 @@ export class PedidosComponent implements OnInit {
   changeStatus(id: string, newStatus: boolean){
     this.store.completeRequest(id,newStatus);
   }
-
+  changeVisibility(){
+    this.hiddenCompleteRequests = !this.hiddenCompleteRequests;
+  }
+  visible(status: boolean){
+    if(this.hiddenCompleteRequests){
+      return this.hiddenCompleteRequests&&!status;
+    } else return true;
+  }
 }

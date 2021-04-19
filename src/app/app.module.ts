@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { PedidoDetalheComponent } from './pedido-detalhe/pedido-detalhe.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     PedidosComponent,
     NavbarComponent,
     TopbarComponent,
+    PedidoDetalheComponent,
   ],
   imports: [
     BrowserModule,
