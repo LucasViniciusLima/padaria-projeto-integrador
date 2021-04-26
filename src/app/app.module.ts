@@ -32,7 +32,7 @@ import { PedidoDetalheComponent } from './pedido-detalhe/pedido-detalhe.componen
     routing,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
-  ],
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

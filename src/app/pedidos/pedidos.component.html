@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let pedido of pedidos let i=index">
-            <td *ngIf="visible(pedido.finalizado)"><img class="action" style="width:20px;" src="/assets/lupa.svg"/></td>
+            <td *ngIf="visible(pedido.finalizado)"><img [routerLink]="['/detalhepedido', i]"  class="action" style="width:20px;" src="/assets/lupa.svg"/></td>
             <td *ngIf="visible(pedido.finalizado)">{{ pedido.itens[0]?.nome }}{{ pedido.itens[1]?.nome? ', '+pedido.itens[1]?.nome+'..' : '.' }}</td>
             <td *ngIf="visible(pedido.finalizado)">{{ pedido.nomeCliente }}</td>
             <td *ngIf="visible(pedido.finalizado)" class="txt_center">{{ pedido.data | date: 'HH:mm' }}</td>

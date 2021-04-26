@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ActivatedRoute } from  '@angular/router';
+import { StoreService } from '../store.service';
 
 @Component({
-  selector: 'app-pedido-detalhe',
+  selector: 'pedido-detalhe',
   templateUrl: './pedido-detalhe.component.html',
   styleUrls: ['./pedido-detalhe.component.css']
 })
 export class PedidoDetalheComponent implements OnInit {
 
-  constructor() { }
+  id: any;
+  pedidos: Array<any>;
 
-  ngOnInit(): void {
+
+  constructor(private route: ActivatedRoute, private store: StoreService) { 
+    this.route.params.subscribe( id => {      
+      this.id = id['parametro'];
+    });    
   }
 
+  ngOnInit(): void {
+    this.store.getItems().subscribe(items => { this.pedidos = items; }); 
+  }
 }

@@ -1,1 +1,32 @@
-<p>pedido-detalhe works!</p>
+<div *ngFor="let pedido of pedidos let i = index">
+    <div *ngIf="i==id">
+        <div>
+            <h3>ITENS</h3>
+            <div>
+                <div *ngFor="let itens of pedido.itens">
+                    <spam>{{ itens.quantidade }} - {{ itens.nome }},</spam>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>OBSERVAÇÕES:</h3>
+            <p>{{ pedido?.observacao? pedido.observacao : 'O cliente não fez nenhuma observação' }}</p>
+            <p>{{ pedido.observacao }}</p>
+        </div>
+        <div>
+            <h3>CLIENTE</h3>
+            <strong>Nome:</strong>
+            <p>{{ pedido.nomeCliente }}</p>
+            <strong>Telefone:</strong>
+            <p>{{ pedido.telefone }}</p>
+
+            <div *ngFor="let endereco of pedido.endereco let i = index">
+                <strong>Endereço {{ i + 1 }}:</strong>
+                <p>Rua: {{ endereco.rua }}</p>
+                <p>Bairro: {{ endereco.bairro }}</p>
+                <p>Numero: {{ endereco.numero }}</p>
+                <p>Cidade: {{ endereco.cidade }}</p>
+            </div>
+        </div>
+    </div>
+</div>
