@@ -57,6 +57,5 @@ export class StoreService {
         return doc.data();
       });
   }
-
 }
 
