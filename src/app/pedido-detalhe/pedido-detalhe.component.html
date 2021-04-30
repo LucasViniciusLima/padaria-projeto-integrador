@@ -3,8 +3,14 @@
         <div>
             <h4>Itens</h4>
             <div>
-                <div *ngFor="let itens of pedido.itens">
-                    <spam>{{ itens.quantidade }} - {{ itens.nome }},</spam>
+                <ul *ngFor="let item of pedido.itens">
+                    <li>{{ item.quantidade }} {{ item.nome }} - {{ item.preco | currency: 'BRL' }}</li>
+                </ul>
+                <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-6">
+                        Total a pagar: {{ getTotalPagar() | currency: 'BRL'}}
+                    </div>                    
                 </div>
             </div>
         </div>

@@ -52,10 +52,8 @@ export class PedidosComponent implements OnInit {
       "headings": { "en": "Titulo da mensagem FRONTEND" } // TITULO DA NOTIFICACÃO
     }
 
-    //BUSCANDO DISPOSITIVOS CADASTRADOS
     const res = await api.get('/players?app_id=9e0b97f6-b531-4e0b-8296-c7f3617ced15&limit=300&offset=0')
 
-    // CHAMAR ESSA API PARA ENVIAR NOTIFICACAO AO FINALIZAR PEDIDO
     if (newStatus === true) {
       const response = await api.post('/notifications', data)
 

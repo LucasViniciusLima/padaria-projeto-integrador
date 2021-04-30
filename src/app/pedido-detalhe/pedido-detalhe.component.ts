@@ -12,7 +12,7 @@ export class PedidoDetalheComponent implements OnInit {
 
   id: any;
   pedidos: Array<any>;
-
+  totalPagar: number = 0;
 
   constructor(private route: ActivatedRoute, private store: StoreService) { 
     this.route.params.subscribe( id => {      
@@ -21,6 +21,10 @@ export class PedidoDetalheComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.getItems().subscribe(items => { this.pedidos = items; }); 
+    this.store.getItems().subscribe(items => { this.pedidos = items }); 
+  }
+
+  getTotalPagar(){
+    return this.totalPagar;
   }
 }
