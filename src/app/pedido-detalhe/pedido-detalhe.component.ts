@@ -13,7 +13,6 @@ export class PedidoDetalheComponent implements OnInit {
 
   id: any;
   pedidos: Array<any>;
-  totalPagar: number = 0;
 
   constructor(private route: ActivatedRoute, private store: StoreService, private notify: NotifyAPIService) { 
     this.route.params.subscribe( id => {      
@@ -30,7 +29,12 @@ export class PedidoDetalheComponent implements OnInit {
     //this.notify.chamarAPI(newStatus);// lembrar de ativar depois
   }
 
-  getTotalPagar(){
-    return this.totalPagar;
+  getTotalPagar(itens: Array<any>){
+    var totalPagar = 0;
+    for(let i=0; i<itens.length;i++){
+      totalPagar += itens[i].preco;
+    }
+    return totalPagar;
   }
+
 }
