@@ -12,7 +12,7 @@
                         <h3 [style.color]="pedido.finalizado ? 'green' : 'red' "> {{ pedido.finalizado ? 'O pedido saiu para a entrega' : 'Pedido pendente' }} </h3>
                     </div>
                     <div class="col-6">
-                        Total a pagar: <strong>{{ getTotalPagar(pedido?.itens) | currency: 'BRL'}}</strong> <button (click)="changeStatus(pedido.id, !pedido.finalizado)" [class]="pedido.finalizado ? 'btn btn-danger ml-3' : 'btn btn-success ml-3'">{{ pedido.finalizado ? 'Cancelar' : 'Completar Pedido' }}</button>
+                        Total a pagar: <strong>{{ getTotalPagar(pedido?.itens) | currency: 'BRL'}}</strong> <button (click)="changeStatus(pedido.id, !pedido.finalizado)" [class]="pedido.finalizado ? 'btn btn-danger ml-3' : 'btn btn-success ml-3'">{{ pedido.finalizado ? 'Cancelar' : 'Enviar Pedido' }}</button>
                     </div>                    
                 </div>
             </div>

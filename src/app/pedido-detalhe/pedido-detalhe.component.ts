@@ -26,7 +26,7 @@ export class PedidoDetalheComponent implements OnInit {
 
   changeStatus(id: string, newStatus: boolean){
     this.store.completeRequest(id,newStatus);
-    //this.notify.chamarAPI(newStatus);// lembrar de ativar depois
+    this.notify.chamarAPI(newStatus);
   }
 
   getTotalPagar(itens: Array<any>){

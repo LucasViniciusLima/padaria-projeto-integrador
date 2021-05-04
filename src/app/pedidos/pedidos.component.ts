@@ -24,7 +24,7 @@ export class PedidosComponent implements OnInit {
 
   changeStatus(id: string, newStatus: boolean){
     this.store.completeRequest(id,newStatus);
-    //this.notify.chamarAPI(newStatus); // lembrar de ativar depois
+    this.notify.chamarAPI(newStatus); 
   }
   changeVisibility(){
     this.hiddenCompleteRequests = !this.hiddenCompleteRequests;

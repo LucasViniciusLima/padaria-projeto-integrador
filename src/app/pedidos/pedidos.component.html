@@ -24,7 +24,7 @@
             <td *ngIf="visible(pedido.finalizado)" class="txt_center">{{ pedido.data | date: 'dd-MM-' }}2021</td>
             <td *ngIf="visible(pedido.finalizado)" class="action txt_center" (click)="changeStatus(pedido.id, !pedido.finalizado)"
                 [style.color]="pedido.finalizado? 'green': 'red'">
-                {{ pedido.finalizado ? '✓' : '✗' }}
+                {{ pedido.finalizado ? '● Enviado' : '● Pendente' }}
             </td>
         </tr>
     </tbody>
