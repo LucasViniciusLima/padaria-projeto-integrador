@@ -14,6 +14,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { PedidoDetalheComponent } from './pedido-detalhe/pedido-detalhe.component';
+import { ConfigMessagesComponent } from './config-messages/config-messages.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,12 +28,14 @@ import { PedidoDetalheComponent } from './pedido-detalhe/pedido-detalhe.componen
     NavbarComponent,
     TopbarComponent,
     PedidoDetalheComponent,
+    ConfigMessagesComponent,
   ],
   imports: [
     BrowserModule,
     routing,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
    ],
   providers: [],
   bootstrap: [AppComponent]

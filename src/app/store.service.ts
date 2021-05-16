@@ -48,6 +48,10 @@ export class StoreService {
     this.store.collection('pedido').doc(id).update({ "finalizado": newStatus });
   }
 
+  setNewMessage(assunto: string, mensagem: string){
+    this.store.collection('mensagens').add({ "assunto": assunto, "mensagem": mensagem });
+  }
+
   getUserData(id: string) {
     return this.store
       .collection("usuario")
