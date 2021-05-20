@@ -1,16 +1,18 @@
-<small class="text-center">Controle seus produtos e pedidos aqui.</small>
-<div class="card" style="width: 14.5rem;">
-    <div class="card-header text-dark">
+<div class="h-100 position-fixed text-white d-none d-md-block d-lg-block" style="width: 14.5rem; background-color: #222;">
+    <div class="row my-3 justify-content-center align-items-center">
+        <img src="/assets/paes-icon.png"  style="width: 50px; cursor:pointer;" alt="" [routerLink]="'/'">
+    </div>
+    <div class="card-header bg-dark">
         MEU PAINEL
     </div>
-    <ul style="cursor:pointer" class="list-group list-group-flush">
-        <li class="list-group-item" [routerLink]="'/pedidos'">Pedidos</li>
-        <li class="list-group-item">Meus Produtos</li>
+    <ul style="cursor:pointer;" class="list-group list-group-flush">
+        <li [routerLink]="'/pedidos'" class="list-group-item bg-transparent">Pedidos</li>
+        <li class="list-group-item bg-transparent" >Meus Produtos</li>
     </ul>
-    <div class="card-header text-dark">
+    <div class="card-header bg-dark">
         MINHA CONTA
     </div>
-    <ul style="cursor:pointer" class="list-group list-group-flush">
-        <li class="list-group-item">Editar Perfil</li>
+    <ul style="cursor:pointer;" class="list-group list-group-flush">
+        <li class="list-group-item bg-transparent">Editar Perfil</li>
     </ul>
 </div>
