@@ -1,0 +1,19 @@
+.padaria-navbar{
+    width: 14.5rem;
+    background-color: #222;
+}
+.menu-icon{
+    width: 35px;
+    height: auto;
+}
+@media only screen and (max-width: 1390px) {
+    .padaria-navbar{
+        width: 10rem; 
+    }
+  }
+
+  @media only screen and (max-width: 887px) {
+    .padaria-navbar{
+        width: 8rem;     
+    }
+  }
