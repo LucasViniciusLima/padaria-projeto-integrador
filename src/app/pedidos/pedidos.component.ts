@@ -14,6 +14,7 @@ export class PedidosComponent implements OnInit {
   pedidos: Array<any>;
   hiddenCompleteRequests: boolean;
   quantidadeItens: number = 10;
+  dicas:boolean = true;
 
   constructor(private store: StoreService, private notify: NotifyAPIService) {    
     this.hiddenCompleteRequests = false;
@@ -38,6 +39,10 @@ export class PedidosComponent implements OnInit {
 
   setQuantidadeItens(num:number){
     this.quantidadeItens = num;
+  }
+
+  desabilitarDicas(){
+    this.dicas = false;
   }
   
 }

@@ -9,3 +9,13 @@
 .txt_center{
     text-align: center;
 }
+.bv-background{
+    background: linear-gradient(148deg, rgba(0,215,255,1) 0%, rgba(0,121,255,1) 100%);
+}
+.bv-icon{
+    filter: drop-shadow(5px 5px 7px #00000096);
+}
+.text-bv{
+    font-weight:lighter;
+    font-size: 22px;
+}

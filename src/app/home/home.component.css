@@ -1,0 +1,10 @@
+.bv-background{
+    background: linear-gradient(148deg, rgba(255,0,146,1) 0%, rgba(255,201,0,1) 100%);
+}
+.bv-icon{
+    filter: drop-shadow(5px 5px 7px #00000096);
+}
+.text-bv{
+    font-weight:lighter;
+    font-size: 22px;
+}
