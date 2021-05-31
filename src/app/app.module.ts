@@ -16,6 +16,7 @@ import { PedidoDetalheComponent } from './pedido-detalhe/pedido-detalhe.componen
 import { ConfigMessagesComponent } from './config-messages/config-messages.component';
 import { FormsModule } from '@angular/forms';
 import { ModelNavigationComponent } from './model-navigation/model-navigation.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ModelNavigationComponent } from './model-navigation/model-navigation.co
     PedidoDetalheComponent,
     ConfigMessagesComponent,
     ModelNavigationComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

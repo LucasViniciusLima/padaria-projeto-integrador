@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { PedidoDetalheComponent } from './pedido-detalhe/pedido-detalhe.component';
 import { ConfigMessagesComponent } from './config-messages/config-messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const APP_ROUTES: Routes = [
     { path: 'cadastro', component: CadastroComponent },
@@ -14,7 +15,8 @@ const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent },
     { path: 'pedidos', component: PedidosComponent },
     { path: 'detalhepedido/:parametro', component: PedidoDetalheComponent },
-    { path: 'configmessages', component: ConfigMessagesComponent}  
+    { path: 'configmessages', component: ConfigMessagesComponent},
+    { path: 'dashboard', component: DashboardComponent}
 ];
 
 export const routing: ModuleWithProviders<any> = RouterModule.forRoot(APP_ROUTES);

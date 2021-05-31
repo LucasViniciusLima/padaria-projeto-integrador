@@ -1,0 +1,21 @@
+<model-template>
+    <h1>Dashboard</h1>
+    <hr>
+    <div><label>Dashboard /</label><label class="text-info">Meu Dashboard</label></div>
+    <div class="row">
+        <div class="col-md-6">
+            
+        </div>
+        <div class="col-md-6 text-center text-success">
+            <h2>{{ totalGanho() | currency : 'R$ ' }} </h2>
+            <div>VALOR TOTAL GANHO</div>
+        </div>
+        <div class="col-md-6 text-info">
+            <h5>{{ calcularPedidosCompletosHoje() }} PEDIDOS COMPLETADOS HOJE</h5>
+            <h5>{{ calcularTotalGanhoHoje() | currency : 'R$ ' }} VALOR GANHO HOJE</h5>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+</model-template>
