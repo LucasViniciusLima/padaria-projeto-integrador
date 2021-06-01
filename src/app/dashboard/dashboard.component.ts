@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { StoreService } from '../store.service';
+import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,12 +14,24 @@ export class DashboardComponent implements OnInit {
   pedidos: Array<any> = new Array<any>();
   currentDate: Date = new Date();
 
+
   constructor(private store: StoreService) {
-    this.store.getItems().subscribe(items => { this.pedidos = items; });
+    this.store.getItems().subscribe(items => {
+      this.pedidos = items;    
+    });
   }
 
-  ngOnInit(): void {
+  /**
+  [■,■,■,■].map(■→●) ⇒ [●,●,●,●]
+  [■,●,■,▲].filter(■→true) ⇒ [■,■]
+  [■,●,■,▲].find(●→true) ⇒ ●
+  [■,●,■,▲].findIndex(●→true) ⇒ 1
+  [■,●,■,▲].fill(●) ⇒ [●,●,●,●]
+  [■,●,■,▲].some(●→true) ⇒ true
+  [■,●,■,▲].every(●→true) ⇒ false
+   */
 
+  ngOnInit(): void {    
   }
 
   quantidadeTotal() {
@@ -26,7 +41,7 @@ export class DashboardComponent implements OnInit {
   calcularTotalPedido(pedidoItens: Array<any>) {
     var total = 0;
     for (let i = 0; i < pedidoItens.length; i++) {
-      total = pedidoItens[i].preco;
+      total += pedidoItens[i].preco;
     }
     return total;
   }
@@ -44,32 +59,31 @@ export class DashboardComponent implements OnInit {
     else return false;
   }
 
-  calcularPedidosHoje(){
+  calcularPedidosHoje() {
     var total = 0;
-    
+
     for (let i = 0; i < this.quantidadeTotal(); i++) {
-      if(this.verificarDataHoje(i)) total++;
+      if (this.verificarDataHoje(i)) total++;
+    }
+    return total;
+  }
+  
+
+  calcularPedidosCompletosHoje() {
+    var total = 0;
+
+    for (let i = 0; i < this.quantidadeTotal(); i++) {
+      if (this.verificarDataHoje(i) && this.pedidos[i].finalizado) total++;
     }
 
     return total;
   }
 
-  calcularPedidosCompletosHoje(){
-    var total = 0;
-    
-    for (let i = 0; i < this.quantidadeTotal(); i++) {
-      if(this.verificarDataHoje(i) && this.pedidos[i].finalizado) total++;
-    }
-
-    return total;
-  }
-
-  calcularTotalGanhoHoje(){
+  calcularTotalGanhoHoje() {
     var total = 0;
     for (let i = 0; i < this.quantidadeTotal(); i++) {
-      if(this.verificarDataHoje(i) && this.pedidos[i].finalizado) total += this.calcularTotalPedido(this.pedidos[i].itens);
+      if (this.verificarDataHoje(i) && this.pedidos[i].finalizado) total += this.calcularTotalPedido(this.pedidos[i].itens);
     }
     return total;
   }
-
 }

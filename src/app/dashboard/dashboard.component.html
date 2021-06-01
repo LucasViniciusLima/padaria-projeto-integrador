@@ -4,18 +4,18 @@
     <div><label>Dashboard /</label><label class="text-info">Meu Dashboard</label></div>
     <div class="row">
         <div class="col-md-6">
-            
+            <chart-quantidade></chart-quantidade>
         </div>
-        <div class="col-md-6 text-center text-success">
+        <div class="col-md-6 text-center text-success my-auto">
             <h2>{{ totalGanho() | currency : 'R$ ' }} </h2>
             <div>VALOR TOTAL GANHO</div>
         </div>
-        <div class="col-md-6 text-info">
+        <div class="col-md-6 text-info my-auto">
             <h5>{{ calcularPedidosCompletosHoje() }} PEDIDOS COMPLETADOS HOJE</h5>
             <h5>{{ calcularTotalGanhoHoje() | currency : 'R$ ' }} VALOR GANHO HOJE</h5>
         </div>
         <div class="col-md-6">
-
+            <chart-status-pedindg></chart-status-pedindg>
         </div>
     </div>
 </model-template>

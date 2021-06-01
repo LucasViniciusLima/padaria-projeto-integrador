@@ -17,6 +17,10 @@ import { ConfigMessagesComponent } from './config-messages/config-messages.compo
 import { FormsModule } from '@angular/forms';
 import { ModelNavigationComponent } from './model-navigation/model-navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ChartQuantidadeComponent } from './dashboard/chart-quantidade/chart-quantidade.component';
+import { ChartStatusPedindgComponent } from './dashboard/chart-status-pedindg/chart-status-pedindg.component';
+
 
 
 @NgModule({
@@ -31,13 +35,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ConfigMessagesComponent,
     ModelNavigationComponent,
     DashboardComponent,
+    ChartQuantidadeComponent,
+    ChartStatusPedindgComponent,
   ],
   imports: [
     BrowserModule,
     routing,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    FormsModule
+    FormsModule,
+    NgApexchartsModule
    ],
   providers: [],
   bootstrap: [AppComponent]
