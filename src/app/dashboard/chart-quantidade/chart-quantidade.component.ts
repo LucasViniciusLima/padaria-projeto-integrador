@@ -49,11 +49,22 @@ export class ChartQuantidadeComponent implements OnInit {
       ],
       chart: {
         height: 200,
-        width: 400,
+        width: 380,
         type: "bar",
       },
       xaxis: {
         categories: ["Total", "Hoje"]
+      },
+      plotOptions: {
+        bar: {
+          distributed: true
+        }
+      },
+      legend: {
+        show: false
+      },
+      fill: {
+        colors: ['#12C6AA','#179BF7']
       }
     }
   }

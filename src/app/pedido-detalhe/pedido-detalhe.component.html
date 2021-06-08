@@ -2,23 +2,24 @@
     <div *ngFor="let pedido of pedidos let i = index">
         <div *ngIf="i==id">
             <div>
-                <h4>Itens</h4>
+                <h4>ITENS</h4>
                 <div>
                     <ul *ngFor="let item of pedido.itens">
                         <li>{{ item.quantidade }} {{ item.nome }} - {{ item.preco | currency: 'BRL' }}</li>
                     </ul>
                     <div class="row">
-                        <div class="col-6">
-                            <strong>Método de pagamento: {{ pedido.formaPagamento }}</strong>
-                            <h3 [style.color]="pedido.finalizado ? 'green' : 'red' "> {{ pedido.finalizado ? 'O pedido
-                                saiu
-                                para a entrega' : 'Pedido pendente' }} </h3>
+                        <div class="col-6 pt-md-3">
+                            <h4>Método de pagamento: </h4>
+                            <h5 class="text-info">{{ pedido.formaPagamento | uppercase}}</h5>
                         </div>
                         <div class="col-6">
                             Total a pagar: <strong>{{ getTotalPagar(pedido?.itens) | currency: 'BRL'}}</strong> <button
                                 (click)="changeStatus(pedido.id, !pedido.finalizado)"
                                 [class]="pedido.finalizado ? 'btn btn-danger ml-3' : 'btn btn-success ml-3'">{{
                                 pedido.finalizado ? 'Cancelar' : 'Enviar Pedido' }}</button>
+                            <h5 class="mt-2" [style.color]="pedido.finalizado ? 'green' : 'red' ">
+                                {{ pedido.finalizado ? 'O PEDIDO SAIU PARA A ENTREGA' : 'PEDIDO PENDENTE' }}
+                            </h5>
                         </div>
                     </div>
                 </div>
